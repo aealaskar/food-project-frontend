@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.signup {
+  margin-right: 15px;
+}
+.logout {
+  margin-left: 15px;
+}
+.user {
+  color: white;
+  margin: 7px 0px 0px 0px;
+}
