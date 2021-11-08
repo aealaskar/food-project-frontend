@@ -28,13 +28,34 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await api.post("/signin", userData);
-      localStorage.setItem(res.data.token);
+      localStorage.setItem("myToken", res.data.token);
       this.setUser(res.data.token);
     } catch (error) {
       alert(error);
     }
   };
+
+  logout = () => {
+    delete api.defaults.headers.Authorization;
+    localStorage.removeItem("myToken");
+    this.user = null;
+  };
+
+  checkForToken = () => {
+    this.user = null;
+    const token = localStorage.getItem("myToken");
+    if (token) {
+      const currentTime = Date.now();
+      let tempUser = decode(token);
+      if (tempUser.exp >= currentTime) {
+        this.setUser(token);
+      } else {
+        this.logout();
+      }
+    }
+  };
 }
 
 const authStore = new AuthStore();
+authStore.checkForToken();
 export default authStore;

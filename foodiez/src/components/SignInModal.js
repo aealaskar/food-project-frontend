@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import authStore from "../stores/authStore";
 import { Modal, Button, Form } from "react-bootstrap";
-
-function SignUpModal() {
+function SignInModal() {
   const [user, setUser] = useState({ username: "", password: "" });
 
   const handleChange = (event) => {
@@ -13,7 +12,7 @@ function SignUpModal() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    authStore.signup(user);
+    authStore.signin(user);
   };
 
   const [show, setShow] = useState(false);
@@ -24,13 +23,13 @@ function SignUpModal() {
   return (
     <div>
       <>
-        <Button variant="light" className="signup" onClick={handleShow}>
-          Sign Up
+        <Button variant="light" onClick={handleShow}>
+          Sign In
         </Button>
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Sign Up</Modal.Title>
+            <Modal.Title>Sign In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={handleSubmit}>
@@ -68,4 +67,4 @@ function SignUpModal() {
   );
 }
 
-export default SignUpModal;
+export default SignInModal;
