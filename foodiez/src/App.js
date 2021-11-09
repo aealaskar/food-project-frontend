@@ -15,11 +15,8 @@ function App() {
         <Route path="/categoryList/:categorySlug">
           <CategoryItem />
         </Route>
-        <Route exact path="/ingredientList/">
+        <Route exact path="/ingredientList">
           <IngredientList />
-        </Route>
-        <Route exact path="/ingredientList/:ingredientSlug">
-          <IngredientItem />
         </Route>
         <Route exact path="/">
           <Home />
