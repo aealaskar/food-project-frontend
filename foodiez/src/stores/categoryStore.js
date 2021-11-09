@@ -3,6 +3,7 @@ import { makeAutoObservable } from "mobx";
 import api from "./api";
 
 class CategoryStore {
+  // REVIEW: It's a list of categories, so it should be called `categories` not `category`.
   category = [];
   //isLoading = true;
 

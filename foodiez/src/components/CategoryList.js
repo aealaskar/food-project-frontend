@@ -7,6 +7,7 @@ function CategoryList() {
   const categoryList = categoryStore.category.map((category) => {
     return <CategoryItem category={category} key={category._id} />;
   });
+  // REVIEW: Remove console log if you're done with it
   console.log(categoryList);
   return <div>{categoryList}</div>;
 }

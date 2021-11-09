@@ -18,6 +18,7 @@ class AuthStore {
   signup = async (userData) => {
     try {
       const res = await api.post("/signup", userData);
+      // REVIEW: You don't need to set the token in local storage here, you're already doing that in the setUser method
       localStorage.setItem("myToken", res.data.token);
       this.setUser(res.data.token);
     } catch (error) {
@@ -28,6 +29,7 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await api.post("/signin", userData);
+      // REVIEW: You don't need to set the token in local storage here, you're already doing that in the setUser method
       localStorage.setItem("myToken", res.data.token);
       this.setUser(res.data.token);
     } catch (error) {
@@ -42,6 +44,7 @@ class AuthStore {
   };
 
   checkForToken = () => {
+    // REVIEW: You don't need to set the user to null here
     this.user = null;
     const token = localStorage.getItem("myToken");
     if (token) {

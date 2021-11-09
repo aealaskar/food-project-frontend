@@ -8,6 +8,7 @@ import LogOut from "./LogOut";
 
 function NavBar() {
   return (
+    // REVIEW: Remove the div tag
     <div>
       <Navbar bg="primary" variant="dark">
         <Container>

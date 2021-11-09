@@ -8,6 +8,7 @@ function SignUpModal() {
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
+    // REVIEW: Remove the console log
     console.log(event.target.id);
   };
 
@@ -22,6 +23,7 @@ function SignUpModal() {
   const handleShow = () => setShow(true);
 
   return (
+    // REVIEW: Remove the div tag
     <div>
       <>
         <Button variant="light" className="signup" onClick={handleShow}>
@@ -57,6 +59,7 @@ function SignUpModal() {
                 className="mb-3"
                 controlId="formBasicCheckbox"
               ></Form.Group>
+              {/* REVIEW: You shouldn't call handleClose here. You can call it inside handleSubmit after calling the signin method */}
               <Button variant="primary" type="submit" onClick={handleClose}>
                 Submit
               </Button>

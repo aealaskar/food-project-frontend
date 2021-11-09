@@ -21,6 +21,7 @@ function SignInModal() {
   const handleShow = () => setShow(true);
 
   return (
+    // REVIEW: Remove the div tag if you don't need it
     <div>
       <>
         <Button variant="light" onClick={handleShow}>
@@ -52,10 +53,12 @@ function SignInModal() {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {/* REVIEW: Remove this Form Group, it's not doing anything  */}
               <Form.Group
                 className="mb-3"
                 controlId="formBasicCheckbox"
               ></Form.Group>
+              {/* REVIEW: You shouldn't call handleClose here. You can call it inside handleSubmit after calling the signin method */}
               <Button variant="primary" type="submit" onClick={handleClose}>
                 Submit
               </Button>
