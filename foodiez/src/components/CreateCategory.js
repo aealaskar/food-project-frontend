@@ -12,11 +12,13 @@ function CreateCategory() {
     name: "",
     image: "",
   });
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setCreateCategory({ ...CreateCategory, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+      categoryStore.categoryCreate(CreateCategory)
     handleClose();
   };
   return (

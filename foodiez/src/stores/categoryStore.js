@@ -16,7 +16,14 @@ class CategoryStore {
       //this.isLoading = false;
     } catch (error) {}
   };
+  categoryCreate = async (newCategory) => {
+    try {
+      const res = await api.post("/category", newCategory);
+      this.category.push(res.data);
+    } catch (error) {}
+  };
 }
+
 
 const categoryStore = new CategoryStore();
 categoryStore.fetchCategory();

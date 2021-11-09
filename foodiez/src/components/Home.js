@@ -1,12 +1,11 @@
 import React from "react";
-import CategoryList from "./CategoryList";
-import CreateCategory from "./CreateCategory";
+
+import CreateRecipe from "./CreateRecipe";
 
 function Home() {
   return (
     <div>
-      <CreateCategory />
-      <CategoryList />
+      <CreateRecipe />
     </div>
   );
 }

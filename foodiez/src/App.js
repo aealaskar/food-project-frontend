@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CategoryList from "./components/CategoryList";
 import CategoryItem from "./components/CategoryItem";
+import CreateRecipe from "./components/CreateRecipe";
+
 import Home from "./components/Home";
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <Switch>
         <Route path="/categoryList/:categorySlug">
           <CategoryItem />
+        </Route>
+        <Route path="/recipe">
+          <CreateRecipe />
         </Route>
         <Route exact path="/">
           <Home />
