@@ -7,7 +7,7 @@ import CategoryItem from "./components/CategoryItem";
 import CreateRecipe from "./components/CreateRecipe";
 
 import Home from "./components/Home";
-import IngredientItem from "./components/IngredientItem";
+
 import IngredientList from "./components/IngredientList";
 function App() {
   return (
