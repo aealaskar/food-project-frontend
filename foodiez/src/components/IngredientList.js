@@ -11,9 +11,11 @@ function IngredientList() {
     </Col>
   ));
   return (
-    <div>
-      <Row>{ingredients}</Row>
-    </div>
+    <Container>
+      <Row xs={1} md={3} className="g-4">
+        {ingredients}
+      </Row>
+    </Container>
   );
 }
 

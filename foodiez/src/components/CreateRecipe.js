@@ -9,8 +9,8 @@ function CreateRecipe() {
     <div>
       <CreateCategory />
       <CategoryList />
-      <IngredientList />
       <IngredientCreate />
+      <IngredientList />
     </div>
   );
 }

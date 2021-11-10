@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url(https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .App-logo {
@@ -50,5 +54,27 @@
 
 .categoryBtn {
   margin-top: 15px;
-  margin-left: 100rem;
+  margin-bottom: 15px;
+  margin-left: 50vw;
+}
+
+.glassEffect {
+  background-color: #20202010 !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.card {
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.modal-content {
+  background-color: #ffffff10 !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(5px) !important;
+  color: #ffffff;
+}
+.btn-close {
+  color: #ffffff !important;
 }
