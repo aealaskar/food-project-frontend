@@ -2,7 +2,7 @@ import React from "react";
 import categoryStore from "../stores/categoryStore";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Modal, Button, Form, InputGroup } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
 
 function CategoryItem({ category }) {
   // if (categoryStore.isLoading) return <p>Loading</p>;
