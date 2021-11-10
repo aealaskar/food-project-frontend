@@ -1,18 +1,17 @@
 import { observer } from "mobx-react";
 import React from "react";
+import { Card } from "react-bootstrap";
 
 function IngredientItem({ ingredient }) {
   // if (categoryStore.isLoading) return <p>Loading</p>;
   return (
-    <div
-      className="card col-md-3 card border-primary m-5 "
-      style={{ width: "16rem;" }}
-    >
-      <div className="card-body">
-        <h5 className="card-title">{ingredient.name}</h5>
-        {ingredient.description}
-      </div>
-    </div>
+    <>
+      <Card style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title>{ingredient.name}</Card.Title>
+        </Card.Body>
+      </Card>
+    </>
   );
 }
 

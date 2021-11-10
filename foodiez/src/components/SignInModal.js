@@ -27,7 +27,7 @@ function SignInModal() {
           Sign In
         </Button>
 
-        <Modal show={show} onHide={handleClose}>
+        <Modal className="glassEffect" show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Sign In</Modal.Title>
           </Modal.Header>
