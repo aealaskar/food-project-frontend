@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, InputGroup, Form } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import categoryStore from "../stores/categoryStore";
 
@@ -18,39 +18,44 @@ function CreateCategory() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      categoryStore.categoryCreate(CreateCategory)
+    categoryStore.categoryCreate(CreateCategory);
     handleClose();
   };
   return (
     <div>
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" onClick={handleShow} className="categoryBtn">
           Create Category
         </Button>
+
         <Modal show={show} onHide={handleClose}>
-          <div>
-            <form onSubmit={handleSubmit}>
-              <h3 className="cmj">Add a New Category</h3>
-              <br />
-              Category Name:
-              <input
-                className="form-control me-2"
-                type="text"
-                name="name"
-                onChange={handleChange}
-              />
-              <br />
-              Category Image:
-              <input
-                className="form-control me-2"
-                name="image"
-                onChange={handleChange}
-              />
-              <button type="submit" className="btn btn-primary">
+          <Modal.Header closeButton>
+            <Modal.Title>Add a New Category</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Category Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter category name"
+                  name="name"
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formFile" className="mb-3">
+                <Form.Label>Default file input example</Form.Label>
+                <Form.Control type="file" />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="formBasicCheckbox"
+              ></Form.Group>
+              <Button variant="primary" type="submit" onClick={handleClose}>
                 Submit
-              </button>
-            </form>
-          </div>
+              </Button>
+            </Form>
+          </Modal.Body>
         </Modal>
       </>
     </div>

@@ -47,7 +47,7 @@ class AuthStore {
     if (token) {
       const currentTime = Date.now();
       let tempUser = decode(token);
-      if (tempUser.exp >= currentTime) {
+      if (tempUser.exp * 1000 >= currentTime) {
         this.setUser(token);
       } else {
         this.logout();

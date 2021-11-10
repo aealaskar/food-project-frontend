@@ -12,9 +12,7 @@ function IngredientList() {
   ));
   return (
     <div>
-      <Container>
-        <Row>{ingredients}</Row>
-      </Container>
+      <Row>{ingredients}</Row>
     </div>
   );
 }

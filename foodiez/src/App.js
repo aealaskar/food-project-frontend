@@ -20,10 +20,9 @@ function App() {
 
         <Route path="/recipe">
           <CreateRecipe />
-
+        </Route>
         <Route exact path="/ingredientList">
           <IngredientList />
-
         </Route>
         <Route exact path="/">
           <Home />
