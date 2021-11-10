@@ -13,6 +13,7 @@ function CategoryList() {
     );
   });
 
+
   return (
     <Container>
       <Row xs={1} md={3} className="g-4">
@@ -20,6 +21,7 @@ function CategoryList() {
       </Row>
     </Container>
   );
+
 }
 
 export default observer(CategoryList);

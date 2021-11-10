@@ -7,23 +7,14 @@ import { Card, Button, Container, Row } from "react-bootstrap";
 function CategoryItem({ category }) {
   // if (categoryStore.isLoading) return <p>Loading</p>;
 
-  const [check, setCheck] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState([]);
 
-  const handleChange = () => {
-    if (check === true) {
-      setCheck(false);
-    } else {
-      setCheck(true);
-      setSelectedCategory({ ...selectedCategory, category });
-    }
-  };
-  console.log(check);
-  const newCategory = [];
-  if (check === true) {
-    newCategory.push(category.name);
-  }
-  console.log(selectedCategory);
+  
+
+
+
+  
+
+  
   return (
     // <div
     //   className="card col-md-3 card border-primary m-5 "
@@ -41,6 +32,7 @@ function CategoryItem({ category }) {
         <Card.Img variant="top" src={category.image} />
         <Card.Body>
           <Card.Title>{category.name}</Card.Title>
+
 
           <Button variant="light">Add Recipe</Button>
         </Card.Body>
