@@ -15,7 +15,8 @@ function CreateCategory() {
   const handleChange = (e) => {
     setCreateCategory({ ...CreateCategory, [e.target.name]: e.target.value });
   };
-
+  const handleImage = (event) =>
+    setCreateCategory({ ...CreateCategory, image: event.target.files[0] });
   const handleSubmit = (e) => {
     e.preventDefault();
     categoryStore.categoryCreate(CreateCategory);
@@ -45,7 +46,7 @@ function CreateCategory() {
               </Form.Group>
               <Form.Group controlId="formFile" className="mb-3">
                 <Form.Label>Default file input example</Form.Label>
-                <Form.Control type="file" />
+                <Form.Control type="file" name="image" onChange={handleImage} />
               </Form.Group>
               <Form.Group
                 className="mb-3"

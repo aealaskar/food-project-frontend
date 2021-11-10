@@ -14,16 +14,16 @@ function CategoryItem({ category }) {
       setCheck(false);
     } else {
       setCheck(true);
-      /* setSelectedCategory({ ...selectedCategory, category }); */
+      setSelectedCategory({ ...selectedCategory, category });
     }
   };
-  /* console.log(check);
+  console.log(check);
   const newCategory = [];
   if (check === true) {
     
     newCategory.push(category.name)
   }
-  console.log(selectedCategory); */
+  console.log(selectedCategory);
   return (
     <div
       className="card col-md-3 card border-primary m-5 "

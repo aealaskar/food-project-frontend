@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-
 import api from "./api";
 
 class CategoryStore {
@@ -18,7 +17,11 @@ class CategoryStore {
   };
   categoryCreate = async (newCategory) => {
     try {
-      const res = await api.post("/category", newCategory);
+      const formData = new FormData();
+      for (const key in newCategory) {
+        formData.append(key, newCategory[key]);
+      }
+      const res = await api.post("/category", formData);
       this.category.push(res.data);
     } catch (error) {}
   };
