@@ -9,6 +9,8 @@ import CreateRecipe from "./components/CreateRecipe";
 import Home from "./components/Home";
 import IngredientItem from "./components/IngredientItem";
 import IngredientList from "./components/IngredientList";
+import RecipeList from "./components/RecipeList";
+
 function App() {
   return (
     <div className="App">
@@ -17,10 +19,13 @@ function App() {
         <Route path="/categoryList/:categorySlug">
           <CategoryItem />
         </Route>
-
+        <Route path="/recipes">
+          <RecipeList />
+        </Route>
         <Route path="/recipe">
           <CreateRecipe />
         </Route>
+
         <Route exact path="/ingredientList">
           <IngredientList />
         </Route>

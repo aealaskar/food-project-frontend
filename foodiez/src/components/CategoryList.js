@@ -9,7 +9,8 @@ function CategoryList() {
     return <CategoryItem category={category} key={category._id} />;
   });
   console.log(categoryList);
-  return <Row>{categoryList}</Row>;
+  return <Row>{categoryList}</Row>
+  ;
 }
 
 export default observer(CategoryList);
