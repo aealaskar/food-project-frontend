@@ -78,3 +78,7 @@
 .btn-close {
   color: #ffffff !important;
 }
+
+.select {
+  width: 500px;
+}
