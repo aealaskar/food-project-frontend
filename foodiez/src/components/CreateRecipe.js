@@ -10,9 +10,13 @@ function CreateRecipe() {
     <div>
       <CreateCategory />
       <CategoryList />
+
+
       <CustomSelect />
       <IngredientList />
+
       <IngredientCreate />
+      <IngredientList />
     </div>
   );
 }

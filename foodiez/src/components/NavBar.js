@@ -9,7 +9,7 @@ import LogOut from "./LogOut";
 function NavBar() {
   return (
     <div>
-      <Navbar bg="primary" variant="dark">
+      <Navbar className="glassEffect" variant="dark">
         <Container>
           <Navbar.Brand href="#home">Foodiez</Navbar.Brand>
           <Nav className="me-auto">
