@@ -41,7 +41,7 @@ function IngredientCreate() {
               <Form.Label>Ingredient Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter category name"
+                placeholder="Enter ingredient name"
                 name="name"
                 onChange={handleChange}
               />

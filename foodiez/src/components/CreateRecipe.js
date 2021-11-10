@@ -11,11 +11,7 @@ function CreateRecipe() {
       <CreateCategory />
       <CategoryList />
 
-
       <CustomSelect />
-      <IngredientList />
-
-      <IngredientCreate />
       <IngredientList />
     </div>
   );
