@@ -16,7 +16,7 @@ import authStore from "../stores/authStore";
 // const IngredientList = ingredientStore.ingredients;
 // const CategoryList = categoryStore.category; // maybe we could pass this to custom select?
 
-function CreateRecipe() {
+function CreateRecipe({CreateIngredient}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,7 +25,7 @@ function CreateRecipe() {
     name: "",
     image: "",
     categories: "",
-    ingredients: "",
+    ingredients: CreateIngredient,
   });
 
   const [Category, setCategory] = useState([]);
@@ -47,7 +47,7 @@ function CreateRecipe() {
     recipeStore.recipeCreate(recipe);
     // console.log(recipeStore.recipe);
 
-    // recipeStore.recipe.ingredients.push(recipe.ingredients);
+
     handleClose();
   };
   // console.log("this is in createrecipe", Ingredient);
@@ -64,7 +64,7 @@ function CreateRecipe() {
         {authStore.user ? (
           <>
             <Button
-              variant="primary"
+              variant="light"
               onClick={handleShow}
               className="categoryBtn"
             >
@@ -97,7 +97,7 @@ function CreateRecipe() {
               <Form.Group
                 className="mb-3"
                 controlId="formBasicCheckbox"
-              ></Form.Group>
+              ></Form.Group >
               {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Ingredients</Form.Label>
                 <Form.Control
@@ -108,7 +108,7 @@ function CreateRecipe() {
                 />
               </Form.Group> */}
 
-              <Button variant="primary" type="submit" onClick={handleClose}>
+              <Button variant="light" type="submit" onClick={handleClose}>
                 Create Submit
               </Button>
             </Form>
@@ -125,7 +125,7 @@ function CreateRecipe() {
         <></>
       )}
       <CategoryList />
-      <IngredientList />
+     {/*  <IngredientList /> */}
     </div>
   );
 }

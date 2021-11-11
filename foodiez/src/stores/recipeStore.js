@@ -23,6 +23,7 @@ class RecipeStore {
       }
       const res = await api.post("/recipes", formData);
       this.recipe.push(res.data);
+      
     } catch (error) {}
   };
 }

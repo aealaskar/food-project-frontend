@@ -20,9 +20,12 @@ function CategoryItem({ category }) {
     //     <h5 className="card-title">{category.name}</h5>
     //   </div>
     // </div>
+
     <>
       <Card className="glassEffect" style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={category.image} />
+        <Link to={`/categoryList/${category.slug}`}>
+          <Card.Img variant="top" src={category.image} />
+        </Link>
         <Card.Body>
           <Card.Title>{category.name}</Card.Title>
 

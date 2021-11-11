@@ -7,6 +7,7 @@ function CategoryList() {
   // if (categoryStore.isLoading) return <p>Loading</p>;
   const categoryList = categoryStore.categories.map((category) => {
     return (
+      
       <Col>
         <CategoryItem category={category} key={category._id} />
       </Col>
