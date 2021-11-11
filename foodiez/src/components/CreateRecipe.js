@@ -112,7 +112,7 @@ function CreateRecipe() {
         </Modal>
       </>
       <CustomSelect Ingredient={Ingredient} setIngredient={setIngredient} />
-      {/* <CustomCreateCategory /> */}
+      <CustomCreateCategory setCategory={setCategory} Category={Category} />
       {authStore.user ? (
         <>
           <CreateCategory />
