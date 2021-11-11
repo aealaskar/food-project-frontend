@@ -25,13 +25,13 @@ function CreateCategory() {
   };
   return (
     <>
-      {authStore.user ? (
-        <Button variant="primary" onClick={handleShow} className="categoryBtn">
-          Create Category
-        </Button>
-      ) : (
+      {/* {authStore.user ? ( */}
+      <Button variant="primary" onClick={handleShow} className="categoryBtn">
+        Create Category
+      </Button>
+      {/* ) : (
         <></>
-      )}
+      )} */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -49,7 +49,7 @@ function CreateCategory() {
               />
             </Form.Group>
             <Form.Group controlId="formFile" className="mb-3">
-              <Form.Label>Default file input example</Form.Label>
+              <Form.Label>choose an image please</Form.Label>
               <Form.Control type="file" name="image" onChange={handleImage} />
             </Form.Group>
             <Form.Group

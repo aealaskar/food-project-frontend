@@ -5,14 +5,13 @@ import CategoryItem from "./CategoryItem";
 import { Col, Container, Row } from "react-bootstrap";
 function CategoryList() {
   // if (categoryStore.isLoading) return <p>Loading</p>;
-  const categoryList = categoryStore.category.map((category) => {
+  const categoryList = categoryStore.categories.map((category) => {
     return (
       <Col>
         <CategoryItem category={category} key={category._id} />
       </Col>
     );
   });
-
 
   return (
     <Container>
@@ -21,7 +20,6 @@ function CategoryList() {
       </Row>
     </Container>
   );
-
 }
 
 export default observer(CategoryList);

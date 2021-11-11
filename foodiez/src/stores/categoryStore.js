@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import api from "./api";
 
 class CategoryStore {
-  category = [];
+  categories = [];
   //isLoading = true;
 
   constructor() {
@@ -11,7 +11,7 @@ class CategoryStore {
   fetchCategory = async () => {
     try {
       const res = await api.get("/category");
-      this.category = res.data;
+      this.categories = res.data;
       //this.isLoading = false;
     } catch (error) {}
   };
@@ -22,7 +22,7 @@ class CategoryStore {
         formData.append(key, newCategory[key]);
       }
       const res = await api.post("/category", formData);
-      this.category.push(res.data);
+      this.categories.push(res.data);
     } catch (error) {}
   };
 }

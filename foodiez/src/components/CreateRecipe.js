@@ -5,10 +5,11 @@ import IngredientCreate from "./IngredientCreate";
 import IngredientList from "./IngredientList";
 import CustomSelect from "./CustomSelect";
 import recipeStore from "../stores/recipeStore";
-
+import CustomCreateCategory from "../components/CustomCreateCategory";
 import { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import { observer } from "mobx-react";
+import authStore from "../stores/authStore";
 // import ingredientStore from "../stores/ingredientStore";
 // import categoryStore from "../stores/categoryStore";
 
@@ -27,7 +28,7 @@ function CreateRecipe() {
     ingredients: "",
   });
 
-  // const [Category, setCategory] = useState([]);
+  const [Category, setCategory] = useState([]);
   const [Ingredient, setIngredient] = useState([]);
 
   // useEffect(() => {
@@ -44,18 +45,31 @@ function CreateRecipe() {
   const handleSubmit = (e) => {
     e.preventDefault();
     recipeStore.recipeCreate(recipe);
+    console.log(recipeStore.recipe);
+
+    recipeStore.recipe.ingredients.push(recipe.ingredients);
     handleClose();
   };
   console.log("this is in createrecipe", Ingredient);
   recipe.ingredients = Ingredient;
-  console.log(recipe.ingredients);
+  console.log("this is recipe ingredients", recipe.ingredients);
 
   return (
     <div>
       <>
-        <Button variant="primary" onClick={handleShow} className="categoryBtn">
-          Create recipe
-        </Button>
+        {authStore.user ? (
+          <>
+            <Button
+              variant="primary"
+              onClick={handleShow}
+              className="categoryBtn"
+            >
+              Create recipe
+            </Button>
+          </>
+        ) : (
+          <></>
+        )}
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -73,7 +87,7 @@ function CreateRecipe() {
                 />
               </Form.Group>
               <Form.Group controlId="formFile" className="mb-3">
-                <Form.Label>Default file input example</Form.Label>
+                <Form.Label>choose a recipe image</Form.Label>
                 <Form.Control type="file" name="image" onChange={handleImage} />
               </Form.Group>
               <Form.Group
@@ -97,11 +111,16 @@ function CreateRecipe() {
           </Modal.Body>
         </Modal>
       </>
-
-      <CreateCategory />
-      <CategoryList />
-
       <CustomSelect Ingredient={Ingredient} setIngredient={setIngredient} />
+      {/* <CustomCreateCategory /> */}
+      {authStore.user ? (
+        <>
+          <CreateCategory />
+        </>
+      ) : (
+        <></>
+      )}
+      <CategoryList />
       <IngredientList />
     </div>
   );

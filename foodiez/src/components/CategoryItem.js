@@ -26,7 +26,7 @@ function CategoryItem({ category }) {
         <Card.Body>
           <Card.Title>{category.name}</Card.Title>
 
-          {authStore.user ? <Button variant="light">Add Recipe</Button> : <></>}
+          {/* {authStore.user ? <Button variant="light">Add Recipe</Button> : <></>} */}
         </Card.Body>
       </Card>
     </>
