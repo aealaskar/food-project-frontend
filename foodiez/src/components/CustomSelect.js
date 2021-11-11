@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Modal, Form } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
+import authStore from "../stores/authStore";
 
 function CustomSelect(props) {
   const [show, setShow] = useState(false);
@@ -64,9 +65,13 @@ function CustomSelect(props) {
           classNamePrefix="select"
           onChange={handleChangeValue}
         />
-        <Button variant="primary" onClick={handleShow}>
-          +
-        </Button>
+        {authStore.user ? (
+          <Button variant="primary" onClick={handleShow}>
+            +
+          </Button>
+        ) : (
+          <></>
+        )}
         <div>
           {" "}
           <Modal show={show} onHide={handleClose}>

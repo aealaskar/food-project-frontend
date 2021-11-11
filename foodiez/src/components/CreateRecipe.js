@@ -45,14 +45,18 @@ function CreateRecipe() {
   const handleSubmit = (e) => {
     e.preventDefault();
     recipeStore.recipeCreate(recipe);
-    console.log(recipeStore.recipe);
+    // console.log(recipeStore.recipe);
 
-    recipeStore.recipe.ingredients.push(recipe.ingredients);
+    // recipeStore.recipe.ingredients.push(recipe.ingredients);
     handleClose();
   };
-  console.log("this is in createrecipe", Ingredient);
-  recipe.ingredients = Ingredient;
-  console.log("this is recipe ingredients", recipe.ingredients);
+  // console.log("this is in createrecipe", Ingredient);
+  // recipe.ingredients = Ingredient;
+  // console.log("this is recipe ingredients", recipe.ingredients);
+
+  console.log("this is in catories", Category);
+  recipe.categories = Category;
+  console.log("this is recipe categories", recipe.Category);
 
   return (
     <div>
