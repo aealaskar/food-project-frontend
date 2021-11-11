@@ -6,10 +6,12 @@ import { Button } from "react-bootstrap";
 
 import { Modal, Form } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
-import IngredientItem from "./IngredientItem";
 
 
-function CustomSelect() {
+function CustomSelect(props) {
+
+
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,21 +19,28 @@ function CustomSelect() {
     name: "",
     description: "",
   });
-  const [Ingredient, setIngredient] = useState([]);
 
   const ingredients = ingredientStore.ingredients.map((ingredient) => ({
     label: ingredient.name,
-    value: ingredient.name,
+    value: ingredient._id,
+    // value: ingredient.name // if i want the name of the ingredient
   }));
+  // useState
 
   const handleChangevalue = (value) => {
+    console.log("this is before", value);
+    value = value.map((v) => v.value);
+    console.log("this is for v", value);
+    props.setIngredient(value);
+
+    console.log(props.Ingredient);
     // setIngredient({ ...Ingredient, [e.target.value]: e.target.value });
 
-    setIngredient([...Ingredient, value]);
-    console.log(Ingredient);
+    // props.setIngredient([...props.Ingredient, value]);
+    // console.log(props.Ingredient);
   };
   const handleSubmitValue = () => {
-    console.log(Ingredient);
+    props.Ingredient = console.log(props.Ingredient);
   };
   //   console.log(handleChange);
 
