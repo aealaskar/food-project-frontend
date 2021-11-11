@@ -53,18 +53,20 @@ function CustomSelect(props) {
 
   return (
     <div>
-      <div className="input-group">
+      <div className="input-group" className="select">
         <Select
           placeholder="Select Ingredient"
           defaultValue={[ingredients[1], ingredients[3]]}
           isMulti
           name="colors"
           options={ingredients}
-          className="select"
+          // className="select"
           classNamePrefix="select"
           onChange={handleChangeValue}
         />
-        <Button onClick={handleShow}>+</Button>
+        <Button variant="primary" onClick={handleShow}>
+          +
+        </Button>
         <div>
           {" "}
           <Modal show={show} onHide={handleClose}>

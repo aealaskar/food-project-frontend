@@ -1,12 +1,11 @@
 import Select from "react-select";
-
 import { useState } from "react";
-import categoryStore from "../stores/ingredientStore";
+import categoryStore from "../stores/categoryStore";
 import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import authStore from "../stores/authStore";
 
-function CustomCreateCategory(props) {
+function CustomCreateCategory({ setCategory, category }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,9 +22,9 @@ function CustomCreateCategory(props) {
 
   const handleChangeValue = (value) => {
     // console.log("this is before", value);
-    // valueCat = value.map((val) => val.value);
+    value = value.map((v) => v.value);
     // // console.log("this is for v", value);
-    // props.setCreateCategory(valueCat);
+    setCategory(value);
   };
 
   const handleChange = (e) => {
@@ -41,30 +40,28 @@ function CustomCreateCategory(props) {
     e.preventDefault();
     categoryStore.categoryCreate(CreateCategory);
     handleClose();
+  };
 
-    return (
-      <>
+  return (
+    <>
+      <div className="input-group" className="select">
+        <Select
+          placeholder="Select category"
+          // defaultValue={[]}
+          isMulti
+          name="colors"
+          options={categories}
+          // className="select"
+          classNamePrefix="select"
+          onChange={handleChangeValue}
+        />
         {authStore.user ? (
-          <Button
-            variant="primary"
-            onClick={handleShow}
-            className="categoryBtn"
-          >
+          <Button variant="primary" onClick={handleShow}>
             +
           </Button>
         ) : (
           <></>
         )}
-        <Select
-          placeholder="Select category"
-          defaultValue={[categories[1], categories[3]]}
-          isMulti
-          name="colors"
-          options={categories}
-          className="select"
-          classNamePrefix="select"
-          onChange={handleChangeValue}
-        />
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add a New Category</Modal.Title>
@@ -94,9 +91,9 @@ function CustomCreateCategory(props) {
             </Form>
           </Modal.Body>
         </Modal>
-      </>
-    );
-  };
+      </div>
+    </>
+  );
 }
 
 export default CustomCreateCategory;
