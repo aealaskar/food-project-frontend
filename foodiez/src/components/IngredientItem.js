@@ -6,7 +6,7 @@ function IngredientItem({ ingredient }) {
   // if (categoryStore.isLoading) return <p>Loading</p>;
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card className="glassEffect" style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title>{ingredient.name}</Card.Title>
         </Card.Body>

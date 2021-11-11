@@ -27,7 +27,6 @@ class CategoryStore {
   };
 }
 
-
 const categoryStore = new CategoryStore();
 categoryStore.fetchCategory();
 

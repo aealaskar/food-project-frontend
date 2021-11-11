@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   background-image: url(https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -81,4 +81,8 @@
 
 .select {
   width: 500px;
+}
+
+.clickme {
+  margin-right: 60px;
 }

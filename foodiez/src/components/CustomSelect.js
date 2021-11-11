@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select";
 import ingredientStore from "../stores/ingredientStore";
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 function CustomSelect() {
   const ingredients = ingredientStore.ingredients.map((ingredient) => ({
     label: ingredient.name,
@@ -29,7 +30,9 @@ function CustomSelect() {
         onChange={handleChange}
       />
 
-      <button onClick={handlesubmit}>click me</button>
+      <Button variant="light" className="clickme" onClick={handlesubmit}>
+        click me
+      </Button>
     </div>
   );
 }
