@@ -3,15 +3,10 @@ import Select from "react-select";
 
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-
 import { Modal, Form } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
 
-
 function CustomSelect(props) {
-
-
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,24 +20,23 @@ function CustomSelect(props) {
     value: ingredient._id,
     // value: ingredient.name // if i want the name of the ingredient
   }));
-  // useState
 
-  const handleChangevalue = (value) => {
-    console.log("this is before", value);
+  const handleChangeValue = (value) => {
+    // console.log("this is before", value);
     value = value.map((v) => v.value);
-    console.log("this is for v", value);
+    // console.log("this is for v", value);
     props.setIngredient(value);
 
-    console.log(props.Ingredient);
+    // console.log(props.Ingredient);
     // setIngredient({ ...Ingredient, [e.target.value]: e.target.value });
 
     // props.setIngredient([...props.Ingredient, value]);
     // console.log(props.Ingredient);
   };
-  const handleSubmitValue = () => {
-    props.Ingredient = console.log(props.Ingredient);
-  };
-  //   console.log(handleChange);
+  // const handleSubmitValue = () => {
+  //   props.Ingredient = console.log(props.Ingredient);
+  // };
+  // //   console.log(handleChange);
 
   const handleChange = (e) => {
     setCreateIngredient({
@@ -59,21 +53,6 @@ function CustomSelect(props) {
 
   return (
     <div>
- ahmad-css2
-      <Select
-        defaultValue={[ingredients[1], ingredients[3]]}
-        isMulti
-        name="colors"
-        options={ingredients}
-        className="basic-multi-select"
-        classNamePrefix="select"
-        onChange={handleChange}
-      />
-
-      <Button variant="light" className="clickme" onClick={handlesubmit}>
-        click me
-      </Button>
-
       <div className="input-group">
         <Select
           placeholder="Select Ingredient"
@@ -83,7 +62,7 @@ function CustomSelect(props) {
           options={ingredients}
           className="select"
           classNamePrefix="select"
-          onChange={handleChangevalue}
+          onChange={handleChangeValue}
         />
         <Button onClick={handleShow}>+</Button>
         <div>
@@ -111,10 +90,9 @@ function CustomSelect(props) {
           </Modal>
         </div>
       </div>
-      <div>
+      {/* <div>
         <button onClick={handleSubmitValue}>add ingredients to recipe</button>
-      </div>
-
+      </div> */}
     </div>
   );
 }
