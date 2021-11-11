@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import authStore from "../stores/authStore";
 import ingredientStore from "../stores/ingredientStore";
 
 function IngredientCreate() {
@@ -27,10 +28,13 @@ function IngredientCreate() {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow} className="categoryBtn">
-        Create Ingredient
-      </Button>
-
+      {authStore.user ? (
+        <Button variant="primary" onClick={handleShow} className="categoryBtn">
+          Create Ingredient
+        </Button>
+      ) : (
+        <></>
+      )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add a New Ingredient</Modal.Title>

@@ -3,9 +3,11 @@ import Select from "react-select";
 
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+
 import { Modal, Form } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
 import IngredientItem from "./IngredientItem";
+
 
 function CustomSelect() {
   const [show, setShow] = useState(false);
@@ -48,6 +50,21 @@ function CustomSelect() {
 
   return (
     <div>
+ ahmad-css2
+      <Select
+        defaultValue={[ingredients[1], ingredients[3]]}
+        isMulti
+        name="colors"
+        options={ingredients}
+        className="basic-multi-select"
+        classNamePrefix="select"
+        onChange={handleChange}
+      />
+
+      <Button variant="light" className="clickme" onClick={handlesubmit}>
+        click me
+      </Button>
+
       <div className="input-group">
         <Select
           placeholder="Select Ingredient"
@@ -88,6 +105,7 @@ function CustomSelect() {
       <div>
         <button onClick={handleSubmitValue}>add ingredients to recipe</button>
       </div>
+
     </div>
   );
 }
