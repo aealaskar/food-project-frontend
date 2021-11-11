@@ -26,7 +26,7 @@ function CreateCategory() {
   return (
     <>
       {/* {authStore.user ? ( */}
-      <Button variant="primary" onClick={handleShow} className="categoryBtn">
+      <Button variant="light" onClick={handleShow} className="categoryBtn">
         Create Category
       </Button>
       {/* ) : (
@@ -56,7 +56,7 @@ function CreateCategory() {
               className="mb-3"
               controlId="formBasicCheckbox"
             ></Form.Group>
-            <Button variant="primary" type="submit" onClick={handleClose}>
+            <Button variant="light" type="submit" onClick={handleClose}>
               Submit
             </Button>
           </Form>

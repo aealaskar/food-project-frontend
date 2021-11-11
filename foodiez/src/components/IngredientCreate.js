@@ -29,7 +29,7 @@ function IngredientCreate() {
   return (
     <div>
       {authStore.user ? (
-        <Button variant="primary" onClick={handleShow} className="categoryBtn">
+        <Button variant="light" onClick={handleShow} className="categoryBtn">
           Create Ingredient
         </Button>
       ) : (
@@ -50,7 +50,7 @@ function IngredientCreate() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleClose}>
+            <Button variant="light" type="submit" onClick={handleClose}>
               Submit
             </Button>
           </Form>
