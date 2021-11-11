@@ -3,18 +3,11 @@ import categoryStore from "../stores/categoryStore";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Card, Button, Container, Row } from "react-bootstrap";
+import authStore from "../stores/authStore";
 
 function CategoryItem({ category }) {
   // if (categoryStore.isLoading) return <p>Loading</p>;
 
-
-  
-
-
-
-  
-
-  
   return (
     // <div
     //   className="card col-md-3 card border-primary m-5 "
@@ -33,8 +26,7 @@ function CategoryItem({ category }) {
         <Card.Body>
           <Card.Title>{category.name}</Card.Title>
 
-
-          <Button variant="light">Add Recipe</Button>
+          {authStore.user ? <Button variant="light">Add Recipe</Button> : <></>}
         </Card.Body>
       </Card>
     </>
